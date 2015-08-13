@@ -3,6 +3,7 @@
 
 import sys
 import commands
+import requests
 
 from slacker import Slacker
 from selenium import webdriver
@@ -19,8 +20,8 @@ def slack_message_test(username=USERNAME):
     slack.chat.post_message(channel='#detect_log', username=username, text=text)
 
 def web_cloning():
-  default = commands.getoutput("http http://localhost:3000")
-  
+  default = requests.get(sys.argv[1])
+  print default.headers['last-modified']
     
 if __name__ == "__main__":
   if len(sys.argv) != 2:
