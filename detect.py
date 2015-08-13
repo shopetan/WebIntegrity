@@ -19,8 +19,7 @@ def slack_message_test(username=USERNAME):
     slack.chat.post_message(channel='#detect_log', username=username, text=text)
 
 def web_cloning():
-  default = commands.getoutput("http http://172.17.248.85")
-  print default
+  default = commands.getoutput("http http://localhost:3000")
   
     
 if __name__ == "__main__":
